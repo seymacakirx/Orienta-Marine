@@ -42,7 +42,7 @@ a{ color:inherit; text-decoration:none; }
   gap:16px;
 }
 .brand__logo{
-  height:34px;
+  height:80px;
   width:auto;
   display:block;
 }
@@ -274,9 +274,3 @@ input:focus, textarea:focus{
     padding:10px;
     width: min(240px, calc(100% - 40px));
   }
-}
-.brand img {
-  height: 80px;  
-  width: auto;    
-  display: block; 
-}
