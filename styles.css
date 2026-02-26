@@ -275,3 +275,8 @@ input:focus, textarea:focus{
     width: min(240px, calc(100% - 40px));
   }
 }
+.brand img {
+  height: 80px;  
+  width: auto;    
+  display: block; 
+}
