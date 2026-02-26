@@ -1,13 +1,96 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Orienta Marine</title>
-  <meta name="description" content="Orienta Marine - Denizcilik ve Yat Hizmetleri">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body style="font-family: Arial; text-align:center; margin-top:100px;">
-  <h1>Orienta Marine</h1>
-  <p>Yakında yayında.</p>
+<body>
+
+  <!-- Header -->
+  <header class="topbar">
+    <div class="container">
+      <a href="#top" class="brand">
+        <img src="assets/logo.svg" alt="Orienta Marine Logo">
+      </a>
+      <nav class="nav">
+        <a href="#about">Hakkımızda</a>
+        <a href="#services">Hizmetlerimiz</a>
+        <a href="#contact">İletişim</a>
+      </nav>
+      <button class="nav-toggle">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero Video -->
+  <section class="hero" id="top">
+    <video autoplay muted loop playsinline class="hero-video" poster="assets/poster.jpg">
+      <source src="assets/hero.mp4" type="video/mp4">
+      Tarayıcınız video etiketini desteklemiyor.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h1>Orienta Marine</h1>
+      <p>Denizcilik operasyonları ve kurumsal çözümler.</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn btn-primary">Hizmetlerimiz</a>
+        <a href="#contact" class="btn btn-ghost">İletişime Geç</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>Hakkımızda</h2>
+      <p>Orienta Marine, denizcilik alanında operasyonel ve teknik çözümler sunan kurumsal bir şirkettir.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <h2>Hizmetlerimiz</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Operasyon Hizmetleri</h3>
+          <p>Planlama, koordinasyon ve raporlama ile uçtan uca operasyon yönetimi.</p>
+        </div>
+        <div class="card">
+          <h3>Teknik Destek</h3>
+          <p>Bakım, kontrol ve tedarik süreçlerinde standartlara uygun teknik çözümler.</p>
+        </div>
+        <div class="card">
+          <h3>Danışmanlık</h3>
+          <p>Verimlilik, mevzuat ve süreç iyileştirme odaklı profesyonel danışmanlık.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>İletişim</h2>
+      <p>Email: info@orientamarine.com | Telefon: +90 (___) ___ __ __</p>
+      <form action="mailto:info@orientamarine.com" method="post" enctype="text/plain">
+        <label>Ad Soyad<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Mesaj<textarea name="message" rows="4" required></textarea></label>
+        <button type="submit" class="btn btn-primary">Gönder</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Orienta Marine. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
