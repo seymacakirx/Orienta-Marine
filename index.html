@@ -4,11 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Orienta Marine</title>
-    <!-- Favicon -->
+  <!-- Favicon -->
   <!-- <link rel="icon" href="favicon.png" type="image/png"> -->
   <link rel="stylesheet" href="style.css">
-</head>
-<body>
   <meta name="description" content="Orienta Marine — Denizcilik çözümleri ve operasyon hizmetleri." />
   <link rel="preload" href="./assets/hero.mp4" as="video" type="video/mp4">
   <link rel="stylesheet" href="styles.css" />
@@ -25,6 +23,7 @@
       <nav class="nav" aria-label="Ana menü">
         <a href="#about">Hakkımızda</a>
         <a href="#services">Hizmetlerimiz</a>
+        <a href="#fleet">Filomuz</a>
         <a href="#contact">İletişim</a>
       </nav>
 
@@ -116,61 +115,61 @@
     </div>
   </section>
 
-<section class="section fleet">
-  <div class="container">
-    <h2>Filomuz</h2>
-    <p class="lead">Modern ve konforlu teknelerimizle unutulmaz deniz deneyimleri.</p>
+  <section id="fleet" class="section fleet">
+    <div class="container">
+      <h2>Filomuz</h2>
+      <p class="lead">Modern ve konforlu teknelerimizle unutulmaz deniz deneyimleri.</p>
 
-    <div class="fleet-slider">
+      <div class="fleet-slider">
 
-      <button class="fleet-btn fleet-prev">&#10094;</button>
+        <button class="fleet-btn fleet-prev">&#10094;</button>
 
-      <div class="fleet-track">
+        <div class="fleet-track">
 
-        <div class="fleet-card">
-          <img src="assets/tekne1.jpg" alt="Tekne 1">
-          <h3>Aribeyi</h3>
-          <p>20 kişilik gulet. Turlar ve özel etkinlikler için ideal.</p>
+          <div class="fleet-card">
+            <img src="assets/tekne1.jpg" alt="Tekne 1">
+            <h3>Aribeyi</h3>
+            <p>20 kişilik gulet. Turlar ve özel etkinlikler için ideal.</p>
+          </div>
+
+          <div class="fleet-card">
+            <img src="assets/tekne2.jpg" alt="Tekne 2">
+            <h3>Aribeyi</h3>
+            <p>Konforlu oturma alanları ve geniş güverteye sahip modern gulet.</p>
+          </div>
+
+          <div class="fleet-card">
+            <img src="assets/tekne3.jpg" alt="Tekne 3">
+            <h3>Aribeyi</h3>
+            <p>10 kabinli ve tüm kabinlerde banyo ve klima.</p>
+          </div>
+        
+          <div class="fleet-card">
+            <img src="assets/tekne4.jpg" alt="Tekne 4">
+            <h3>Sun Chaser</h3>
+            <p>Geniş güvertesi ile güneşin tadını çıkarabileceğiniz modern yat.</p>
+          </div>
+
+          <div class="fleet-card">
+            <img src="assets/tekne5.jpg" alt="Tekne 5">
+            <h3>Wave Rider</h3>
+            <p>Hız ve konforu bir araya getiren 10 kişilik motoryat.</p>
+          </div>
+
+          <div class="fleet-card">
+            <img src="assets/tekne6.jpg" alt="Tekne 6">
+            <h3>Coral Queen</h3>
+            <p>Özel partiler ve Boğaz turları için tasarlanmış şık yat.</p>
+          </div>
+
         </div>
 
-        <div class="fleet-card">
-          <img src="assets/tekne2.jpg" alt="Tekne 2">
-          <h3>Aribeyi</h3>
-          <p>Konforlu oturma alanları ve geniş güverteye sahip modern gulet.</p>
-        </div>
-
-        <div class="fleet-card">
-          <img src="assets/tekne3.jpg" alt="Tekne 3">
-          <h3>Aribeyi</h3>
-          <p> 10 kabinli ve tüm kabinlerde banyo ve klima.</p>
-        </div>
-      
-        <div class="fleet-card">
-          <img src="assets/tekne4.jpg" alt="Tekne 4">
-          <h3>Sun Chaser</h3>
-          <p>Geniş güvertesi ile güneşin tadını çıkarabileceğiniz modern yat.</p>
-        </div>
-
-        <div class="fleet-card">
-          <img src="assets/tekne5.jpg" alt="Tekne 5">
-          <h3>Wave Rider</h3>
-          <p>Hız ve konforu bir araya getiren 10 kişilik motoryat.</p>
-        </div>
-
-        <div class="fleet-card">
-          <img src="assets/tekne6.jpg" alt="Tekne 6">
-          <h3>Coral Queen</h3>
-          <p>Özel partiler ve Boğaz turları için tasarlanmış şık yat.</p>
-        </div>
+        <button class="fleet-btn fleet-next">&#10095;</button>
 
       </div>
-
-      <button class="fleet-btn fleet-next">&#10095;</button>
-
     </div>
-  </div>
-</section>
-  
+  </section>
+    
   <section id="contact" class="section">
     <div class="container grid">
       <div>
@@ -183,19 +182,18 @@
           <div><strong>Adres:</strong> İstanbul, Türkiye</div>
         </div>
 
-        <p class="muted">
-          (PHP/Node) veya Formspree
-        </p>
+        <p class="muted">(PHP/Node) veya Formspree ile çalışmaktadır</p>
       </div>
 
-      <form class="card form" action="mailto:info@orientamarine.com" method="post" enctype="text/plain">
+      <!-- Formspree Formu -->
+      <form class="card form" action="https://formspree.io/f/mgonyewa" method="POST">
         <label>
           Ad Soyad
-          <input name="name" type="text" placeholder="Adınız Soyadınız" required />
+          <input type="text" name="name" placeholder="Adınız Soyadınız" required>
         </label>
         <label>
           E-posta
-          <input name="email" type="email" placeholder="ornek@mail.com" required />
+          <input type="email" name="email" placeholder="ornek@mail.com" required>
         </label>
         <label>
           Mesaj
@@ -203,6 +201,7 @@
         </label>
         <button class="btn btn--primary" type="submit">Gönder</button>
       </form>
+
     </div>
   </section>
 
@@ -212,6 +211,7 @@
       <div class="footer__links">
         <a href="#about">Hakkımızda</a>
         <a href="#services">Hizmetlerimiz</a>
+        <a href="#fleet">Filomuz</a>
         <a href="#contact">İletişim</a>
       </div>
     </div>
