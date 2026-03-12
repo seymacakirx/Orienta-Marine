@@ -3,13 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Orienta Marine — Denizcilik çözümleri ve operasyon hizmetleri." />
   <title>Orienta Marine</title>
-  <link rel="preload" href="./assets/hero.mp4" as="video" type="video/mp4">
-  <link rel="stylesheet" href="style.css" />
+    <!-- Favicon -->
+  <!-- <link rel="icon" href="favicon.png" type="image/png"> -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <meta name="description" content="Orienta Marine — Denizcilik çözümleri ve operasyon hizmetleri." />
+  <link rel="preload" href="./assets/hero.mp4" as="video" type="video/mp4">
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
+<body>
   <!-- Top Bar -->
   <header class="topbar" aria-label="Site üst menüsü">
     <div class="container topbar__inner">
@@ -30,21 +35,32 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero (Video Background) -->
   <main id="top" class="hero" role="main">
-    <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="./assets/poster.jpg">
+    <video
+      class="hero__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="./assets/poster.jpg"
+    >
       <source src="./assets/hero.mp4" type="video/mp4" />
       Tarayıcınız video etiketini desteklemiyor.
     </video>
+
     <div class="hero__overlay" aria-hidden="true"></div>
 
     <section class="hero__content container">
       <h1>Orienta Marine</h1>
       <p>Denizcilik operasyonları, teknik destek ve kurumsal çözümler.</p>
+
       <div class="hero__cta">
         <a class="btn btn--primary" href="#services">Hizmetleri Gör</a>
         <a class="btn btn--ghost" href="#contact">Teklif Al</a>
       </div>
+
       <div class="hero__badges" aria-label="Öne çıkan özellikler">
         <div class="badge">Güvenli Operasyon</div>
         <div class="badge">Zamanında Teslim</div>
@@ -53,7 +69,7 @@
     </section>
   </main>
 
-  <!-- Hakkımızda -->
+  <!-- Sections -->
   <section id="about" class="section">
     <div class="container grid">
       <div>
@@ -79,11 +95,11 @@
     </div>
   </section>
 
-  <!-- Hizmetler -->
   <section id="services" class="section section--alt">
     <div class="container">
       <h2>Hizmetlerimiz</h2>
       <p class="lead">Kurumsal, net ve ölçeklenebilir hizmet başlıkları.</p>
+
       <div class="cards">
         <article class="card">
           <h3>Operasyon Hizmetleri</h3>
@@ -101,65 +117,76 @@
     </div>
   </section>
 
-  <!-- Filomuz -->
-  <section id="fleet" class="section fleet">
-    <div class="container">
-      <h2>Filomuz</h2>
-      <p class="lead">Modern ve konforlu teknelerimizle unutulmaz deniz deneyimleri.</p>
+<section class="section fleet">
+  <div class="container">
+    <h2>Filomuz</h2>
+    <p class="lead">Modern ve konforlu teknelerimizle unutulmaz deniz deneyimleri.</p>
 
-      <div class="fleet-slider">
-        <button class="fleet-btn fleet-prev">&#10094;</button>
+    <div class="fleet-slider">
 
-        <div class="fleet-track">
-          <div class="fleet-card">
-            <img src="assets/tekne1.jpg" alt="Tekne 1">
-            <h3>Blue Dream</h3>
-            <p>12 kişilik lüks motoryat.</p>
-          </div>
-          <div class="fleet-card">
-            <img src="assets/tekne2.jpg" alt="Tekne 2">
-            <h3>Sea Breeze</h3>
-            <p>Konforlu oturma alanları ve geniş güverteye sahip modern yat.</p>
-          </div>
-          <div class="fleet-card">
-            <img src="assets/tekne3.jpg" alt="Tekne 3">
-            <h3>Ocean Star</h3>
-            <p>Boğaz turları ve özel davetler için tasarlanmış şık tekne.</p>
-          </div>
-          <div class="fleet-card">
-            <img src="assets/tekne4.jpg" alt="Tekne 4">
-            <h3>Sun Chaser</h3>
-            <p>Geniş güvertesi ile güneşin tadını çıkarabileceğiniz modern yat.</p>
-          </div>
-          <div class="fleet-card">
-            <img src="assets/tekne5.jpg" alt="Tekne 5">
-            <h3>Wave Rider</h3>
-            <p>Hız ve konforu bir araya getiren 10 kişilik motoryat.</p>
-          </div>
-          <div class="fleet-card">
-            <img src="assets/tekne6.jpg" alt="Tekne 6">
-            <h3>Coral Queen</h3>
-            <p>Özel partiler ve Boğaz turları için tasarlanmış şık yat.</p>
-          </div>
+      <button class="fleet-btn fleet-prev">&#10094;</button>
+
+      <div class="fleet-track">
+
+        <div class="fleet-card">
+          <img src="assets/tekne1.jpg" alt="Tekne 1">
+          <h3>Blue Dream</h3>
+          <p>12 kişilik lüks motoryat. Günlük turlar ve özel etkinlikler için ideal.</p>
         </div>
 
-        <button class="fleet-btn fleet-next">&#10095;</button>
-      </div>
-    </div>
-  </section>
+        <div class="fleet-card">
+          <img src="assets/tekne2.jpg" alt="Tekne 2">
+          <h3>Sea Breeze</h3>
+          <p>Konforlu oturma alanları ve geniş güverteye sahip modern yat.</p>
+        </div>
 
-  <!-- İletişim -->
+        <div class="fleet-card">
+          <img src="assets/tekne3.jpg" alt="Tekne 3">
+          <h3>Ocean Star</h3>
+          <p>Boğaz turları ve özel davetler için tasarlanmış şık tekne.</p>
+        </div>
+      
+        <div class="fleet-card">
+          <img src="assets/tekne4.jpg" alt="Tekne 4">
+          <h3>Sun Chaser</h3>
+          <p>Geniş güvertesi ile güneşin tadını çıkarabileceğiniz modern yat.</p>
+        </div>
+
+        <div class="fleet-card">
+          <img src="assets/tekne5.jpg" alt="Tekne 5">
+          <h3>Wave Rider</h3>
+          <p>Hız ve konforu bir araya getiren 10 kişilik motoryat.</p>
+        </div>
+
+        <div class="fleet-card">
+          <img src="assets/tekne6.jpg" alt="Tekne 6">
+          <h3>Coral Queen</h3>
+          <p>Özel partiler ve Boğaz turları için tasarlanmış şık yat.</p>
+        </div>
+
+      </div>
+
+      <button class="fleet-btn fleet-next">&#10095;</button>
+
+    </div>
+  </div>
+</section>
+  
   <section id="contact" class="section">
     <div class="container grid">
       <div>
         <h2>İletişim</h2>
         <p>Bizimle iletişime geçin, en kısa sürede dönüş yapalım.</p>
+
         <div class="contact">
           <div><strong>E-posta:</strong> info@orientamarine.com</div>
           <div><strong>Telefon:</strong> +90 (___) ___ __ __</div>
           <div><strong>Adres:</strong> İstanbul, Türkiye</div>
         </div>
-        <p class="muted">(PHP/Node) veya Formspree</p>
+
+        <p class="muted">
+          (PHP/Node) veya Formspree
+        </p>
       </div>
 
       <form class="card form" action="mailto:info@orientamarine.com" method="post" enctype="text/plain">
@@ -180,7 +207,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
       <div>© <span id="year"></span> Orienta Marine. Tüm hakları saklıdır.</div>
@@ -191,3 +217,7 @@
       </div>
     </div>
   </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> ekle bakalım
