@@ -19,6 +19,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // --- NAVBAR SMOOTH SCROLL VE TOPBAR OFFSET ---
+  document.querySelectorAll('.nav a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      const topOffset = 76; // topbar yüksekliği
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - topOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    });
+  });
+  // --- NAVBAR SMOOTH SCROLL BİTİŞİ ---
+
+
   // --- FİLO SLIDER KODU BAŞLANGICI ---
   const track = document.querySelector(".fleet-track");
   const prev = document.querySelector(".fleet-prev");
