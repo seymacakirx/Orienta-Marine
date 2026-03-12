@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Yıl güncelleme
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Navbar toggle
   const toggle = document.querySelector(".nav__toggle");
   const nav = document.querySelector(".nav");
 
@@ -21,15 +19,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Smooth scroll tüm anchor linkler için
+  // Smooth scroll with offset for fixed topbar
+  const topbarHeight = document.querySelector('.topbar').offsetHeight;
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - topbarHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
       }
-      // Mobil menüyü kapatma
+
+      // Mobil menüyü kapat
       if (nav.classList.contains('is-open')) {
         nav.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
@@ -44,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (track && prev && next) {
     let position = 0;
-    const cardWidth = track.querySelector(".fleet-card").offsetWidth + 20; // gap=20
+    const cardWidth = track.querySelector(".fleet-card").offsetWidth + 20;
 
     const updateSlider = () => {
       const maxPosition = -(track.scrollWidth - track.clientWidth);
