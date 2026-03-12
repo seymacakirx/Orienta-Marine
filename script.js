@@ -1,44 +1,92 @@
-const yearEl = document.getElementById("year");
-if (yearEl) yearEl.textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", () => {
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-const toggle = document.querySelector(".nav__toggle");
-const nav = document.querySelector(".nav");
+  const toggle = document.querySelector(".nav__toggle");
+  const nav = document.querySelector(".nav");
 
-if (toggle && nav) {
-  toggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  nav.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      nav.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
     });
-  });
-}
 
-// --- FİLO SLIDER KODU BAŞLANGICI ---
-const track = document.querySelector(".fleet-track");
-const prev = document.querySelector(".fleet-prev");
-const next = document.querySelector(".fleet-next");
+    nav.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 
-let position = 0;
+  // --- FİLO SLIDER KODU BAŞLANGICI ---
+  const track = document.querySelector(".fleet-track");
+  const prev = document.querySelector(".fleet-prev");
+  const next = document.querySelector(".fleet-next");
 
-// next butonuna tıklayınca slider kayar
-next.addEventListener("click", () => {
-  // toplam slider genişliği ve görünüm genişliğine göre limit eklenebilir
-  position -= 340; // kart genişliği + gap
-  // max kayma kontrolü (opsiyonel)
-  const maxPosition = -(track.scrollWidth - track.clientWidth);
-  if (position < maxPosition) position = maxPosition;
-  track.style.transform = `translateX(${position}px)`;
+  if (track && prev && next) {
+    let position = 0;
+    const cardWidth = track.querySelector(".fleet-card").offsetWidth + 20; // 20 = gap
+
+    const updateSlider = () => {
+      const maxPosition = -(track.scrollWidth - track.clientWidth);
+      if (position < maxPosition) position = maxPosition;
+      if (position > 0) position = 0;
+      track.style.transform = `translateX(${position}px)`;
+    };
+
+    next.addEventListener("click", () => {
+      position -= cardWidth;
+      updateSlider();
+    });
+
+    prev.addEventListener("click", () => {
+      position += cardWidth;
+      updateSlider();
+    });
+
+    // Mobilde parmakla kaydırma
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+
+    track.addEventListener("pointerdown", e => {
+      isDragging = true;
+      startX = e.clientX;
+      track.style.cursor = "grabbing";
+      track.style.transition = "none";
+    });
+
+    track.addEventListener("pointermove", e => {
+      if (!isDragging) return;
+      currentX = e.clientX;
+      const diff = currentX - startX;
+      track.style.transform = `translateX(${position + diff}px)`;
+    });
+
+    track.addEventListener("pointerup", e => {
+      if (!isDragging) return;
+      isDragging = false;
+      track.style.cursor = "grab";
+      const diff = currentX - startX;
+      if (Math.abs(diff) > cardWidth / 4) {
+        position += diff > 0 ? cardWidth : -cardWidth;
+      }
+      track.style.transition = "transform .4s ease";
+      updateSlider();
+    });
+
+    track.addEventListener("pointerleave", e => {
+      if (!isDragging) return;
+      isDragging = false;
+      track.style.cursor = "grab";
+      const diff = currentX - startX;
+      if (Math.abs(diff) > cardWidth / 4) {
+        position += diff > 0 ? cardWidth : -cardWidth;
+      }
+      track.style.transition = "transform .4s ease";
+      updateSlider();
+    });
+  }
+  // --- FİLO SLIDER KODU BİTİŞİ ---
 });
-
-// prev butonuna tıklayınca slider geri gelir
-prev.addEventListener("click", () => {
-  position += 340;
-  if (position > 0) position = 0;
-  track.style.transform = `translateX(${position}px)`;
-});
-// --- FİLO SLIDER KODU BİTİŞİ ---
