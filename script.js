@@ -17,3 +17,28 @@ if (toggle && nav) {
     });
   });
 }
+
+// --- FİLO SLIDER KODU BAŞLANGICI ---
+const track = document.querySelector(".fleet-track");
+const prev = document.querySelector(".fleet-prev");
+const next = document.querySelector(".fleet-next");
+
+let position = 0;
+
+// next butonuna tıklayınca slider kayar
+next.addEventListener("click", () => {
+  // toplam slider genişliği ve görünüm genişliğine göre limit eklenebilir
+  position -= 340; // kart genişliği + gap
+  // max kayma kontrolü (opsiyonel)
+  const maxPosition = -(track.scrollWidth - track.clientWidth);
+  if (position < maxPosition) position = maxPosition;
+  track.style.transform = `translateX(${position}px)`;
+});
+
+// prev butonuna tıklayınca slider geri gelir
+prev.addEventListener("click", () => {
+  position += 340;
+  if (position > 0) position = 0;
+  track.style.transform = `translateX(${position}px)`;
+});
+// --- FİLO SLIDER KODU BİTİŞİ ---
