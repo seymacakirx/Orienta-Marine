@@ -111,10 +111,10 @@ a{ color:inherit; text-decoration:none; }
   letter-spacing:.2px;
   margin:0 0 10px;
 }
-.hero p{
-  margin:0 0 22px;
-  font-size: clamp(16px, 2vw, 18px);
-  color: rgba(232,237,245,.88);
+.hero p {
+  margin: 0 0 22px;
+  font-size: clamp(18px, 2.2vw, 20px);
+  color: rgba(232, 237, 245, 0.88);
   max-width: 56ch;
 }
 
